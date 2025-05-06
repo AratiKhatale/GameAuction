@@ -6,8 +6,6 @@ import AddPlayer from './components/AddPlayer';
 
 import { Outlet } from 'react-router-dom';
 import AddLeader from './components/AddLeader';
-import LeaderInfo from './components/LeaderInfo';
-import PlayerInfo from './components/PlayerInfo';
 import PlayerList from './components/PlayerInfo';
 import LeaderList from './components/LeaderInfo';
 

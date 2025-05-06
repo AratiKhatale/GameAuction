@@ -19,12 +19,10 @@ const LoginPage = () => {
 
     const handleLogin = () => {
         console.log('Logging in with:', formData);
-        // Add your login logic here
     };
 
     const handleForgotPassword = () => {
         alert('Redirect to forgot password page');
-        // Implement forgot password navigation logic
     };
 
     return (
