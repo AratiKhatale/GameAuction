@@ -45,14 +45,14 @@ function Header() {
             name: 'Players',
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOntsEPCU2mYpMefDW0J-IHBr8sp0_T9QtMA&s',
             onclick: () => navigate('/PlayerInfo')
-           
+
         },
         {
             id: '2',
             name: 'Leaders',
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmhm7KSdy5OldcJWgiZnANJP1lij19o2futQ&s',
             onclick: () => navigate('/leaderInfo')
-           
+
         },
     ]
 
@@ -62,9 +62,9 @@ function Header() {
                 {information.map((data, index) => (
                     <ListItem key={data.id} disablePadding>
                         <ListItemButton onClick={() => {
-                                data.onclick();
-                                setOpen(false);
-                            }}>
+                            data.onclick();
+                            setOpen(false);
+                        }}>
                             <ListItemIcon>
                                 <img src={data.img} alt={data.name} style={{
                                     width: 24,
@@ -85,9 +85,9 @@ function Header() {
                 {addData.map((data, index) => (
                     <ListItem key={index} disablePadding>
                         <ListItemButton onClick={() => {
-                                data.onclick();
-                                setOpen(false);
-                            }}>
+                            data.onclick();
+                            setOpen(false);
+                        }}>
                             <ListItemIcon>
                                 {data.icon}
                             </ListItemIcon>
@@ -119,9 +119,24 @@ function Header() {
                     </Toolbar>
                 </AppBar>
             </Box>
-            <Drawer open={open} onClose={toggleDrawer(false)}    >
-                {DrawerList}
-            </Drawer>
+      
+                <Box sx={{ textAlign: 'center', mt: 4 }}>
+                    <img
+                        src="https://miro.medium.com/v2/resize:fit:1400/1*d0s6wr_2dJzo1VNneZIoWw.gif"
+                        alt="Cricket Auction"
+                        style={{
+                            width: '100%',
+                            maxWidth: '600px',
+                            height: 'auto',
+                            borderRadius: '12px',
+                            boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+                        }}
+                    />
+                </Box>
+
+                <Drawer open={open} onClose={toggleDrawer(false)}    >
+                    {DrawerList}
+                </Drawer>
         </div>
     );
 }
