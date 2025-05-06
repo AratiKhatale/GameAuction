@@ -17,6 +17,7 @@ import ListItemText from '@mui/material/ListItemText';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import HomeIcon from '@mui/icons-material/Home';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Grid } from '@mui/material';
 
 function Header() {
     const [open, setOpen] = React.useState(false);
@@ -131,19 +132,61 @@ function Header() {
                 </AppBar>
             </Box>
             {location.pathname === '/' && (
-                <Box sx={{ textAlign: 'center', mt: 4 }}>
-                    <img
-                        src="https://miro.medium.com/v2/resize:fit:1400/1*d0s6wr_2dJzo1VNneZIoWw.gif"
+                // <div style={{display:'flex'}}>
+                
+                    
+                //   <Typography>Super Player Auction
+                //   Live Player Auction Application</Typography>
+               
+                // <Box sx={{ textAlign: 'center', mt: 4,display: 'flex',
+                //     flexDirection: 'row',
+                //     alignContent: 'flex-end',
+                //     justifyContent: 'flex-end' }}>
+                //     <img
+                //         // src="https://miro.medium.com/v2/resize:fit:1400/1*d0s6wr_2dJzo1VNneZIoWw.gif"
+                //         src="https://superplayerauction.com/_next/static/media/Slider-1.b3e8ce14.png"
+                //         alt="Cricket Auction"
+                //         style={{
+                //             // width: '100%',
+                //             // maxWidth: '600px',
+                //             height: 'auto',
+                //             // borderRadius: '12px',
+                //             // boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+                //         }}
+                //     />
+                // </Box>
+                // </div>
+                <Box sx={{ flexGrow: 1, px: 4, py: 6 }}>
+                <Grid container spacing={4} alignItems="center">
+                  {/* Text Section */}
+                  <Grid item xs={12} md={6}>
+                    <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
+                      Super Player Auction
+                    </Typography>
+                    <Typography variant="body1" color="textSecondary">
+                      Live Player Auction Application to manage teams, players and leader bidding in real-time.
+                    </Typography>
+                  </Grid>
+          
+                  {/* Image Section */}
+                  <Grid item xs={12} md={6}>
+                    <Box sx={{ display: 'flex', justifyContent: 'end' }}>
+                      <img
+                        src="https://superplayerauction.com/_next/static/media/Slider-1.b3e8ce14.png"
                         alt="Cricket Auction"
                         style={{
-                            width: '100%',
-                            maxWidth: '600px',
-                            height: 'auto',
-                            borderRadius: '12px',
-                            boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+                        //   width: '100%',
+                          maxWidth: '585px',
+                          height: 'auto',
+                        //   borderRadius: '12px',
+                          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                         }}
-                    />
-                </Box>)}
+                      />
+                    </Box>
+                  </Grid>
+                </Grid>
+              </Box>
+            )}
             <Drawer open={open} onClose={toggleDrawer(false)}    >
                 {DrawerList}
             </Drawer>

@@ -8,6 +8,7 @@ import { Outlet } from 'react-router-dom';
 import AddLeader from './components/AddLeader';
 import PlayerList from './components/PlayerInfo';
 import LeaderList from './components/LeaderInfo';
+import ForgotPassword from './components/ForgotPassword';
 
 const Layout = () => (
   <>
@@ -26,6 +27,7 @@ function App() {
           <Route path="addLeader" element={<AddLeader />} />
           <Route path="leaderInfo" element={<LeaderList />} />
           <Route path="PlayerInfo" element={<PlayerList />} />
+          <Route path="forgotPassword" element={<ForgotPassword />} />
         </Route>
       </Routes>
     </Router>

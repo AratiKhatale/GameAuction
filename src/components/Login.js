@@ -22,7 +22,7 @@ const LoginPage = () => {
     };
 
     const handleForgotPassword = () => {
-        alert('Redirect to forgot password page');
+       navigate('/forgotPassword')
     };
 
     return (
