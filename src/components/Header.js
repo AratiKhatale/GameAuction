@@ -15,11 +15,13 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
-import { useNavigate } from 'react-router-dom';
+import HomeIcon from '@mui/icons-material/Home';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Header() {
     const [open, setOpen] = React.useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
     };
@@ -42,13 +44,19 @@ function Header() {
     const information = [
         {
             id: '1',
+            name: 'Home',
+            icon: <HomeIcon />,
+            onclick: () => navigate('/')
+        },
+        {
+            id: '2',
             name: 'Players',
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOntsEPCU2mYpMefDW0J-IHBr8sp0_T9QtMA&s',
             onclick: () => navigate('/PlayerInfo')
 
         },
         {
-            id: '2',
+            id: '3',
             name: 'Leaders',
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmhm7KSdy5OldcJWgiZnANJP1lij19o2futQ&s',
             onclick: () => navigate('/leaderInfo')
@@ -66,14 +74,17 @@ function Header() {
                             setOpen(false);
                         }}>
                             <ListItemIcon>
-                                <img src={data.img} alt={data.name} style={{
-                                    width: 24,
-                                    height: 27,
-                                    backgroundColor: '#e0e0e0', // light grey background
-                                    padding: 3,
-                                    borderRadius: '50%', // makes it circular
-                                    objectFit: 'cover'
-                                }} />
+                                {
+                                    data.img ? <img src={data.img} alt={data.name} style={{
+                                        width: 24,
+                                        height: 27,
+                                        backgroundColor: '#e0e0e0',
+                                        padding: 3,
+                                        borderRadius: '50%', 
+                                        objectFit: 'cover'
+                                    }} /> : data.icon
+                                }
+
                             </ListItemIcon>
                             <ListItemText primary={data.name} />
                         </ListItemButton>
@@ -119,7 +130,7 @@ function Header() {
                     </Toolbar>
                 </AppBar>
             </Box>
-      
+            {location.pathname === '/' && (
                 <Box sx={{ textAlign: 'center', mt: 4 }}>
                     <img
                         src="https://miro.medium.com/v2/resize:fit:1400/1*d0s6wr_2dJzo1VNneZIoWw.gif"
@@ -132,11 +143,10 @@ function Header() {
                             boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
                         }}
                     />
-                </Box>
-
-                <Drawer open={open} onClose={toggleDrawer(false)}    >
-                    {DrawerList}
-                </Drawer>
+                </Box>)}
+            <Drawer open={open} onClose={toggleDrawer(false)}    >
+                {DrawerList}
+            </Drawer>
         </div>
     );
 }
