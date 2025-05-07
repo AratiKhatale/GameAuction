@@ -17,20 +17,7 @@ const PlayerList = () => {
     const [open, setOpen] = useState(false);
     const [isEdit, setIsEdit] = useState(false);
     const [form, setForm] = useState({ id: null, name: '', mobile: '' });
-    const [confirmOpen, setConfirmOpen] = useState(false);
-    const [selectedId, setSelectedId] = useState(null);
 
-   
-      const confirmDelete = () => {
-        setPlayers(players.filter(p => p.id !== selectedId));
-        setConfirmOpen(false);
-        setSelectedId(null);
-      };
-      
-      const cancelDelete = () => {
-        setConfirmOpen(false);
-        setSelectedId(null);
-      };
       
     const handleOpen = (player = { id: null, name: '', mobile: '' }) => {
         setIsEdit(!!player.id);
@@ -57,8 +44,6 @@ const PlayerList = () => {
     };
 
     const handleDelete = (id) => {
-        setSelectedId(id);
-        setConfirmOpen(true);
         setPlayers(players.filter(p => p.id !== id));
     };
 
