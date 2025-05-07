@@ -81,7 +81,7 @@ function Header() {
                                         height: 27,
                                         backgroundColor: '#e0e0e0',
                                         padding: 3,
-                                        borderRadius: '50%', 
+                                        borderRadius: '50%',
                                         objectFit: 'cover'
                                     }} /> : data.icon
                                 }
@@ -112,8 +112,15 @@ function Header() {
     );
     return (
         <div className="App">
-            <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static">
+            <Box>
+                <AppBar position="static" 
+                sx={{
+                    // backgroundImage: `url('https://img.freepik.com/free-vector/green-cricket-sports-background-with-illustration-players-golden-trophy-cup_1302-5494.jpg')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    color: '#fff'
+                }}
+                >
                     <Toolbar>
                         <IconButton
                             size="large"
@@ -124,68 +131,38 @@ function Header() {
                         >
                             <MenuIcon onClick={toggleDrawer(true)} />
                         </IconButton>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            Welcome
-                        </Typography>
                         <Button color="inherit" onClick={() => navigate('/login')}>Login</Button>
                     </Toolbar>
                 </AppBar>
             </Box>
             {location.pathname === '/' && (
-                // <div style={{display:'flex'}}>
-                
-                    
-                //   <Typography>Super Player Auction
-                //   Live Player Auction Application</Typography>
-               
-                // <Box sx={{ textAlign: 'center', mt: 4,display: 'flex',
-                //     flexDirection: 'row',
-                //     alignContent: 'flex-end',
-                //     justifyContent: 'flex-end' }}>
-                //     <img
-                //         // src="https://miro.medium.com/v2/resize:fit:1400/1*d0s6wr_2dJzo1VNneZIoWw.gif"
-                //         src="https://superplayerauction.com/_next/static/media/Slider-1.b3e8ce14.png"
-                //         alt="Cricket Auction"
-                //         style={{
-                //             // width: '100%',
-                //             // maxWidth: '600px',
-                //             height: 'auto',
-                //             // borderRadius: '12px',
-                //             // boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
-                //         }}
-                //     />
-                // </Box>
-                // </div>
-                <Box sx={{ flexGrow: 1, px: 4, py: 6 }}>
-                <Grid container spacing={4} alignItems="center">
-                  {/* Text Section */}
-                  <Grid item xs={12} md={6}>
-                    <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
-                      Super Player Auction
-                    </Typography>
-                    <Typography variant="body1" color="textSecondary">
-                      Live Player Auction Application to manage teams, players and leader bidding in real-time.
-                    </Typography>
-                  </Grid>
-          
-                  {/* Image Section */}
-                  <Grid item xs={12} md={6}>
-                    <Box sx={{ display: 'flex', justifyContent: 'end' }}>
-                      <img
-                        src="https://superplayerauction.com/_next/static/media/Slider-1.b3e8ce14.png"
-                        alt="Cricket Auction"
-                        style={{
-                        //   width: '100%',
-                          maxWidth: '585px',
-                          height: 'auto',
-                        //   borderRadius: '12px',
-                          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-                        }}
-                      />
-                    </Box>
-                  </Grid>
-                </Grid>
-              </Box>
+                <Box sx={{ flexGrow: 1, px: 4, py: 6 }} >
+                    <Grid container spacing={4} alignItems="center">
+                        <Grid item xs={12} md={6}>
+                            <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
+                                Super Player Auction
+                            </Typography>
+                            <Typography variant="body1" color="textSecondary">
+                                Live Player Auction Application to manage teams, players and leader bidding in real-time.
+                            </Typography>
+                        </Grid>
+
+                        <Grid item xs={12} md={6}>
+                            <Box sx={{ display: 'flex', justifyContent: 'end' }}>
+                                <img
+                                    src="https://superplayerauction.com/_next/static/media/Slider-1.b3e8ce14.png"
+                                    alt="Cricket Auction"
+                                    style={{
+                                        maxWidth: '585px',
+                                        height: 'auto',
+                                        //   borderRadius: '12px',
+                                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                                    }}
+                                />
+                            </Box>
+                        </Grid>
+                    </Grid>
+                </Box>
             )}
             <Drawer open={open} onClose={toggleDrawer(false)}    >
                 {DrawerList}

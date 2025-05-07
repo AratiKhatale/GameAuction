@@ -1,0 +1,114 @@
+  .teams-container1 {
+    background-image: url("https://img.freepik.com/free-photo/cricket-equipment-digital-art_23-2151761231.jpg?ga=GA1.1.1937286470.1746608204&semt=ais_hybrid&w=740");
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 64px);
+  }
+  .teams-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    color: white;
+  }
+  
+
+  .teams-list h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  input[type="checkbox"] {
+    margin-left: 10px;
+  }
+  
+  /* .header{
+    display: flex;
+    position: absolute;
+    top: 50px;
+  } */
+
+  .css-1fdopfm-MuiPaper-root {
+    /* background: rgba(255, 255, 255, 0.726) !important;  */
+    padding: 30px;
+    border-radius: 10px;
+    width: 750px;
+    text-align: left;
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); */
+    position: absolute;
+    color: white;
+    background-color: #123b4cad;
+    border-radius: 15px;
+  max-height: calc(100vh - 96px);
+    
+  }
+
+  /* ReusableTable or your table container */
+.reusable-table {
+  background: rgba(255, 255, 255, 0.89);
+  border-collapse: collapse;
+  width: 100%;
+  /* max-height: calc(100vh - 96px); */
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Table headers */
+.reusable-table th {
+  background-color: #1976d2;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #387b35;
+}
+
+/* Table rows */
+.reusable-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  color: #333;
+}
+
+/* Row hover effect */
+.reusable-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Optional: Reduce spacing and row height */
+.reusable-table tr {
+  height: 40px;
+}
+
+/* Optional: Zebra stripes for better UX */
+.reusable-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.teams-list {
+    width: 750px;
+    position: absolute;
+    right: 50px;
+}
+
+/* .teams-container1 {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+
