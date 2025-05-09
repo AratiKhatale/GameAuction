@@ -1,0 +1,123 @@
+.movies-row-container {
+    padding-left: 63px;
+    padding-right: 20px;
+}
+
+.movies-row-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.movies-thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.movie-thumbnail {
+    border-radius: 10px;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-thumbnail:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .movies-row-container {
+        padding-left: 20px;
+    }
+
+    .movie-thumbnail {
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-thumbnail {
+        max-width: 100px;
+    }
+}
+
+.movies-row-container {
+    margin: 2rem 0;
+  }
+  
+  .movies-row-title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .movie-thumbnail {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-thumbnail:hover {
+    transform: scale(1.05);
+  }
+  .custom-movie-slider .splide__list {
+    padding: 2px !important;
+    margin: 0 !important;
+    height: 100%;
+    display: flex;
+  }
+  
+ /* Wrapper gives room outside the carousel */
+.movies-slider-wrapper {
+    position: relative;
+    padding: 0 2.5rem; 
+  }
+
+  
+  .movies-slider-wrapper {
+    position: relative;
+    overflow: hidden; /* Hide anything outside the wrapper */
+  }
+  
+  /* Ensure the visible carousel doesn’t include the arrows */
+  .custom-movie-slider {
+    padding: 0 3rem; /* This creates space inside for the arrows */
+    box-sizing: border-box;
+  }
+  
+  /* Arrows placed over the padded space */
+  .custom-movie-slider .splide__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Left arrow overlaps left padding */
+  .custom-movie-slider .splide__arrow--prev {
+    left: 0.5rem;
+  }
+  
+  /* Right arrow overlaps right padding */
+  .custom-movie-slider .splide__arrow--next {
+    right: 0.5rem;
+  }
+  
+  /* Optional: white arrow icons */
+  .custom-movie-slider .splide__arrow svg {
+    fill: black;
+  }
+  
+  .splide {
+   position: static;
+}
